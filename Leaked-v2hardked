@@ -454,17 +454,11 @@ kill.BorderSizePixel = 0
 kill.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 kill.Size = UDim2.new(0, 131, 0, 40)
 kill.Font = Enum.Font.SourceSansLight
-kill.Text = "Kill"
+kill.Text = "Execute"
 kill.TextColor3 = Color3.fromRGB(255, 255, 255)
 kill.TextSize = 23.000
 kill.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			Destroy(Players[v].Character.Torso.Neck)
-		else
-			Destroy(Players[v].Character.Head.Neck)
-		end
+	loadstring(target.Text)
 	end
 end)
 
@@ -496,23 +490,14 @@ goto.BorderSizePixel = 0
 goto.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 goto.Size = UDim2.new(0, 131, 0, 40)
 goto.Font = Enum.Font.SourceSansLight
-goto.Text = "Goto"
+goto.Text = Coming Soon"
 goto.TextColor3 = Color3.fromRGB(255, 255, 255)
 goto.TextSize = 23.000
 goto.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		if Players[v].Character ~= nil then
-			if Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') and Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').SeatPart then
-				Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit = false
-				wait(.1)
-			end
-			getRoot(Players.LocalPlayer.Character).CFrame = getRoot(Players[v].Character).CFrame + Vector3.new(3,1,0)
-		end
-	end
+	print("Coming Soon No Input!")
 end)
 
-rtools.Name = "rtools"
+rtools.Name = "Coming Soon"
 rtools.Parent = ScrollingFrame
 rtools.BackgroundColor3 = Color3.fromRGB(172, 172, 172)
 rtools.BackgroundTransparency = 0.500
@@ -520,16 +505,11 @@ rtools.BorderSizePixel = 0
 rtools.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 rtools.Size = UDim2.new(0, 131, 0, 40)
 rtools.Font = Enum.Font.SourceSansLight
-rtools.Text = "Rtools"
+rtools.Text = "Coming Soon"
 rtools.TextColor3 = Color3.fromRGB(255, 255, 255)
 rtools.TextSize = 23.000
 rtools.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text)
-	for i, v in pairs(players) do
-		for i, v in pairs(Players[v]:FindFirstChildOfClass("Backpack"):GetChildren()) do
-			Destroy(v)
-		end
-	end
+	print("Coming Soon No Input!")
 end)
 
 box.Name = "box"
@@ -540,32 +520,12 @@ box.BorderSizePixel = 0
 box.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 box.Size = UDim2.new(0, 131, 0, 40)
 box.Font = Enum.Font.SourceSansLight
-box.Text = "Box"
+box.Text = "Coming Soon"
 box.TextColor3 = Color3.fromRGB(255, 255, 255)
 box.TextSize = 23.000
 box.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		for i, v in pairs(Players[v].Character:GetChildren()) do
-			if v:IsA("Accessory") then
-				Destroy(v)
-			end
-		end
-		for i, v in pairs(Players[v].Character:GetChildren()) do
-			if v:IsA("CharacterMesh") then
-				Destroy(v)
-			end
-		end
-		Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
-		Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
-		Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
-		Destroy(Players[v].Character["Left Arm"])
-		Destroy(Players[v].Character["Left Leg"])
-		Destroy(Players[v].Character["Right Arm"])
-		Destroy(Players[v].Character["Right Leg"])
-		Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
-		Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
-	end
+	print("Coming Soon No Input!
+	
 end)
 
 sink.Name = "sink"
@@ -576,52 +536,14 @@ sink.BorderSizePixel = 0
 sink.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 sink.Size = UDim2.new(0, 131, 0, 40)
 sink.Font = Enum.Font.SourceSansLight
-sink.Text = "Sink"
+sink.Text = "Coming Soon"
 sink.TextColor3 = Color3.fromRGB(255, 255, 255)
 sink.TextSize = 23.000
 sink.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		Destroy(Players[v].Character.HumanoidRootPart)
-	end
+   print("I was tired while typing the same thing I'm done. I'll say e instead")
 end)
 
-function FindInTable(tbl,val)
-	if tbl == nil then return false end
-	for _,v in pairs(tbl) do
-		if v == val then return true end
-	end 
-	return false
-end
-local slockk = false
-local banned = {}
-Players.PlayerAdded:connect(function(plr)
-	if slockk then
-		Destroy(plr)
-	end
-	if FindInTable(banned, plr.UserId) then
-		Destroy(plr)
-	end
-end)
 
-ban.Name = "ban"
-ban.Parent = ScrollingFrame
-ban.BackgroundColor3 = Color3.fromRGB(172, 172, 172)
-ban.BackgroundTransparency = 0.500
-ban.BorderSizePixel = 0
-ban.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
-ban.Size = UDim2.new(0, 131, 0, 40)
-ban.Font = Enum.Font.SourceSansLight
-ban.Text = "Ban"
-ban.TextColor3 = Color3.fromRGB(255, 255, 255)
-ban.TextSize = 23.000
-ban.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		table.insert(banned, Players[v].UserId)
-		Destroy(Players[v])
-	end
-end)
 
 explorer.Name = "explorer"
 explorer.Parent = ScrollingFrame
