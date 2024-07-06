@@ -436,14 +436,12 @@ ragdoll.BorderSizePixel = 0
 ragdoll.Position = UDim2.new(0.079136692, 0, -0.00990098994, 0)
 ragdoll.Size = UDim2.new(0, 131, 0, 40)
 ragdoll.Font = Enum.Font.SourceSansLight
-ragdoll.Text = "Ragdoll"
+ragdoll.Text = "REMOVE ALL PLAYERS"
 ragdoll.TextColor3 = Color3.fromRGB(255, 255, 255)
 ragdoll.TextSize = 23.000
 ragdoll.MouseButton1Click:connect(function()
-	local players = getPlayer(target.Text, Players.LocalPlayer)
-	for i, v in pairs(players) do
-		Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
-	end
+	for I, v in pairs(game.Players:GetChildren()) do
+        destroy(game.Players[v])
 end)
 
 kill.Name = "kill"
